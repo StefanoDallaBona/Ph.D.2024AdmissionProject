@@ -1,14 +1,14 @@
 # Ph.D. 2024 Admission Project
 
-This document provides a concise overview of the main results derived from the design analyses conducted for three experiments proposed as part of the admission process to a Ph.D. course in Psychological Science at Padua.
+This document provides a concise overview of the main results derived from the design analyses conducted for three experiments proposed as part of the admission process to a Ph.D. course in Psychological Science at Padua. This GitHub repository serves as a comprehensive resource for the design analyses conducted for three experiments, along with summaries of main results.
 
-This GitHub repository serves as a comprehensive resource for the design analyses conducted for three experiments, along with summaries of main results. Repository Structure:
+Repository Structure:
 
-* This document: The Read Me document provides a concise overview of the key results derived from the design analyses for the three experiments.
-
-* Folder One: Experiment Analysis Folder.
-
-* Folder Two: Dataset from our previous experiment used to perform power analysis in the first experiment.
+* **This document**: The Read Me document provides a concise overview of the key results derived from the design analyses for the three experiments.
+*  **Experiment 1 (ICP)** Folder: .PDF file, .html file, .Rmd file of the complete Design Analysis of Experiment 1
+*  **Experiment 2 (CFM)** Folder: .PDF file, .html file, .Rmd file of the complete Design Analysis of Experiment 2
+*  **Experiment 3 (SSI)** Folder: .PDF file, .html file, .Rmd file of the complete Design Analysis of Experiment 3
+* **Dataset**: Dataset from our previous experiment used to perform power analysis in the first experiment.
 
 
 # 3. Sample Size Insensivity (SSI)
