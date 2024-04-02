@@ -1,0 +1,344 @@
+---
+title: "Design Analysis SSI/FLE"
+author: "Stefano Dalla Bona"
+date: "2024-03-27"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+bibliography: biblio.bib
+nocite: "@R-base\n"
+csl: "http://profmcouture.ca/apa/apa7-fr-couture.csl"
+header-includes:
+- \usepackage{titling}
+- \pretitle{\begin{center}}
+- \posttitle{\end{center}}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 1. Experimental Procedure
+
+The Sample Size Insensitivity (SSI) task highlights the common difficulty people encounter in recognizing that smaller sample sizes often result in greater variability. The task typically involves the following question:
+
+*A certain town is served by two hospitals. In the larger hospital about 45 babies are born each day, and in the smaller hospital about 15 babies are born each day. As you know, about 50% of all babies are boys. However, the exact percentage varies from day to day. Sometimes it may be higher than 50%, sometimes lower.
+For a period of 1 year, each hospital recorded the days on which more than 60% of the babies born were boys. Which hospital do you think recorded more such days?*
+
+* *The larger hospital*
+
+* *The smaller hospital*
+
+* *About the same (that is, within 5% of each other)* 
+
+
+The correct response is the second alternative. We emphasize that the designed task is brief, typically taking 3/4 minutes to complete.
+
+## 2. Experiment Design
+
+### 2.1 Groups 
+
+In the original study conducted by @tversky1974judgment, it was found that only 22% (21 of the 95) of participants were able to accurately recognize that smaller sample sizes can result in increased variability.
+
+```{r table SSI/FLE}
+Response <- c("Smaller (True)","Bigger (False)","Both (False)")
+Percent_Or <- c("22%","22%","56%")
+
+data <- data.frame(Response, Percent_Or)
+
+knitr::kable(data)
+```
+
+The phenomenon in which biases are attenuated through the presentation of tasks in a foreign language is known as the Foreign Language Effect (FLE). According to one theory of the FLE, reasoning in a unbalanced and disfluent foreign language can induce a heightened state of attentiveness, thus promoting the utilization of System 2 analytical reasoning processes [@del2022decision]. Our study focuses on unbalanced bilingualism, which @grosjean2010bilingual defines as a form of bilingualism characterized by an uneven distribution of proficiency across two languages. In this context, one language typically dominates while the other is less used. Although there isn't a universally accepted definition of unbalanced bilingualism, we specifically refer to a type of unbalanced second language that can lead to greater disfluency in its usage.
+
+Thus, we posit that presenting the task in a second language characterized by disfluency (e.g., presenting the task in English for a native Italian speaker who understands the task but experiences difficulty due to limited everyday use of the language) may lead to a reduction in the SSI bias. This, in turn, could enhance individuals' ability to select the correct answer. Conversely, we hypothesize that presenting the task in a fluent second language (e.g., presenting the task in English for a native Italian speaker who learned English from birth and uses it daily) will not lead to a reduction in this cognitive bias. 
+
+```{r table SSI/FLE2}
+Disfluent <- c("22% + (x)%","22% - (x/y)%","56% - (x/z)%")
+
+Fluent <- c("~22%","~22%","~56%")
+
+data <- data.frame(Response, Percent_Or, Fluent, Disfluent)
+
+knitr::kable(data)
+```
+Here, $x$ represents an arbitrary quantity symbolizing the increase in the disfluent condition. $x/y$ and $x/z$ represent fractions of $x$, as an increase in one response will correspond to a decrease in other responses.
+
+However, if we do not find significant results in the difference between the baseline condition, in which the SSI task is presented in the participants' mother tongue, and the disfluent language condition, we have no theoretical grounds to suspect that a difference would occur with the fluent second language condition. Therefore, the first experiment will only focus on two conditions: the first language (fluent) and the second language (disfluent). If a statistically significant result emerges from this comparison, a second experiment can be built upon the results of the previous one, incorporating the fluent second language condition.
+
+```{r table SSI/FLE3}
+knitr::kable(data[,-3])
+```
+
+
+### 2.2 Checking disfluency 
+
+An important aspect of the experiment relies on selecting an appropriate sample with limited proficiency in an unbalanced second language:
+
+#### A. Recruitment form
+
+The recruitment form will target individuals with relatively limited proficiency in their second language. We intend to utilize the [Prolific platform](https://www.prolific.com) for recruitment. The form will explicitly state that we are seeking participants who:
+
+* Are capable of using another language independently.
+* Do not possess a second language certificate CEFR greater than B2, indicating proficient language skills.
+* Are not simultaneous bilinguals (individuals who become bilingual by learning two languages from birth).
+* Perceive themselves as not fluent in the second language.
+* Do not use the second language every day.
+
+Given the brief nature of the task, we will translate it into several European languages (e.g., English, Spanish, Italian, German, Portuguese, etc.) to offer Prolific participants a selection of different native languages and (disfluent) second languages. Participants will then be randomized into one of the two conditions. For example, a German person could select German as mother tongue and Spanish as a second language that satisfy our requirements. Indipendently of his/her choice, the experiment will allocate him/her on the control group or the FLE group. The randomization is necessary to mitigate the potential confounding variable of education. A sample of individuals with competence in a second language, even if disfluent, may be more educated than a sample of individuals who speak only one language. Since our task requires cognitive abilities, we must be cautious in our sample selection process. Randomization helps ensure that any differences in education level are distributed evenly across the experimental and control groups, minimizing their potential impact on the results.
+
+The primary effect is not expected to vary across different languages. However, we will consider potential variability among languages in a separate analysis. For instance, Italian and Spanish may exhibit greater similarity than Italian and German. We will account for this variability using a random effect parameter in the model (see Section 3), given that our pre-selected sample do not cover all possible languages.
+
+#### B. Objective measurements
+
+Objective measurements on the task will include:
+
+* Questions about possession of a second language diploma.
+* Questions about the age of acquisition (AOA) of the second language.
+* Questions regarding the daily usage of the second language.
+* Total experiment time, which we anticipate to have a higher median for the experimental group. We expect this because the reading pace is likely to be slower for those reading in a disfluent second language. However, we do not anticipate a statistically significant result due to the brevity of the task.
+
+Cut-offs for these measurements will be determined prior to analysis and preregistered on the [Open Science Framework Platform](https://osf.io). Only participants who accurately considered the recruitment form required features, providing correct measurements for the objective scales, will be included in the main analyses. Subsequently, the analyses will be conducted again to assess the impact of any outliers that may exist within our sample, albeit expected to be few.
+
+#### C. Subjective measurements
+
+Subjective scales commonly utilized in this type of experiments will also be employed:
+
+* Self-assessment of language proficiency.
+* Perceived difficulty in reading the task within the experiment, which will help determine if participants genuinely experience disfluency in their second language.
+
+As a secondary analysis (refer to Section 3 for the main analysis), a logistic regression model will be conducted. The model will have the correct responses as the dependent variable and the perceived difficulty in reading and groups as predictors. This analysis aims to evaluate if the difficulty experienced during the task has an impact on the responses.
+
+## 3. Main hypothesis
+
+Upon initial examination, the data format from the experiment indicate that the Chi-Squared Test of Independence would be well-suited for the experimental design. This is because we have two conditions, each capable of generating three categorical frequencies, thus resulting in a 3x2 matrix. For instance:
+
+```{r table Sim chiSQ}
+
+data$Percent_Or <- c(22,22,56); data$Disfluent <- c(42,12,46)
+
+chisq.test(data[,c(-1,-3)])
+```
+
+However, we aim to refine our hypothesis further. Fundamentally, only the proportion of correct responses to the question asked provide meaningful information on bias reduction. The NHST approach in this case is appropriate because our primary objective is to determine whether an effect exists. We assert that presenting the task in a disfluent second language can prompt individuals to increase the number of correct responses. As such, we can formulate two hypotheses:
+
+* *H0: Correct responses proportion (No-FLE) = Correct responses proportion  (FLE)*
+
+* *H1: Correct responses proportion  (No-FLE) < Correct responses proportion (FLE)*
+
+Where "no-FLE" refers to the control group that performs the task in their native language, where the FLE is not expected to be observed, and "FLE" refers to the experimental group that performs the task in a disfluent second language, where the FLE is expected to be observed.
+
+We can seek to support that the data are unlikely under the null hypothesis by utilizing a One-Tailed Two-Proportion Z test (NHST, see Section 4 for the Design analysis). Additionally, to investigate the differences in proportions, we aim to calculate Bayesian posterior distributions for the two conditions, as detailed in Section 5 where we computed Bayesian priors. Following this, we will assess the estimated proportions of all responses using the Bayesian Chi-Squared method on the 3x2 matrix.The results obtained from this second analysis can subsequently be compared with the estimated proportions of correct answers for the two conditions to validate the robustness of estimated value across different statistical models. 
+
+Other more complex (considering the increased number of parameters), secondary models will be constructed and evaluated. These models will incorporate languages as a random variable and the perceived disfluency on the task (see Section 2.2) as a potential predictor.
+
+## 4. Design Analyses (NHST)
+
+Power is viewed as the complement of *beta*, the false negative rate. The power of the test is the chance to reject the null hypothesis, given the null hypothesis is false. We set the value of *beta* to a standard probability of 0.8 to calculate the necessary sample size for each group. 
+To estimate the Effect Size, we relied on the meta-analyses on the effect of the FLE on biases (typically used in a moral dilemma situation) conducted by @circi2021foreign. Given that the mean effect size expressed in Cohen's $d$ is equal to 0.25 (see Section 5), we are adopting the interpretative label created by @cohen2013statistical to specify that we are seeking for a small to medium effect size of Cohen's $h$, also equal in value to 0.25.
+
+```{r power4} 
+library(pwr)
+pwr.2p.test(h = .25, sig.level = 0.05, power = .80, alternative = "greater")
+```
+
+Therefore, we aim to recruit a minimum of 200 participants for each group (i.e., disfluent second language vs. fluent mother tongue). We can visualize the power curve as a function of the sample size.
+
+```{r power5}
+x <- c(1:300)
+y <- pwr.2p.test(h = .25, sig.level = 0.05, n=x, alternative = "greater")$power
+library(ggplot2)
+ggplot(mapping=aes(x,y)) + theme_bw()+
+  geom_line(color="navy") + xlab("Numerosity") + ylab(expression(1-beta))+
+  geom_hline(yintercept = .8, color="darkred", alpha=.3, linetype="dashed")+
+  geom_vline(xintercept = 200, color="darkred", alpha=.3,linetype="dashed")+
+  geom_point(aes(x=200,y=.8),colour="orange", shape=20, size=3)
+
+```
+
+## 5. Bayesian Priors
+
+The proportion test within the NHST framework has limitations as it doesn't allow us to incorporate our expert knowledge into the model beforehand. Therefore, we can opt for a Bayesian data analysis approach, specifically using the IBE (Independent Beta Estimation) method. This model assumes that variable $x$ (i.e., the proportion of correct responses in the control group) and variable $y$ (i.e., the proportion of correct responses in the sperimental group) follow independent binomial distributions with success probabilities $\theta(A)$ and $\theta(B)$. These success probabilities are assigned with independent $Beta(\alpha, \beta)$ distributions, which encode the relative prior plausibility of values for $\theta(A)$ and $\theta(B)$.
+
+<center> $X \sim Beta(\alpha, \beta)$ </center>
+
+<center> $Y \sim Beta(\alpha, \beta)$ </center>
+
+
+### 5.1 Beta parameters (Control Prior)
+
+
+For the control group, we assume that we do not have any valid reason to observe a different result compared to the original study [@tversky1974judgment]. Therefore, we use a binomial distribution with a success probability $\pi$ parameter of 0.22.
+
+Given our estimated group size of $n$ = 200 participants from the previous Design analysis (see Section 4), and a success probability $\pi$ parameter of 0.22, we simulate sampling from a binomial distribution with these parameters to obtain mean and variance that can provides us with an approximation of the beta distribution that characterizes the expected control group's performance.
+
+```{r prior control 1}
+x <- 0:200 
+
+prob <- dbinom(x, 200, 0.22)
+
+
+ggplot(mapping=aes(x=x,y=prob))+
+  geom_point()+theme_bw()+labs(x="Sample Space", y="Probabilities")
+
+
+c <- replicate(1e4,rbinom(1,200,.22))
+c <- c/200
+mean(c); var(c)
+```
+Once we have the mean and variance of the simulated distribution, we can use them to approximate the parameters of a beta distribution.
+
+```{r prior control 2}
+
+estBetaParams <- function(mu, var) {
+  alpha <- ((1 - mu) / var - 1 / mu) * mu ^ 2
+  beta <- alpha * (1 / mu - 1)
+  return(params = list(alpha = alpha, beta = beta))
+}
+
+estBetaParams(0.22,0.0008)
+```
+
+### 5.2 Beta parameters (FLE Prior)
+
+The meta-analysis by @circi2021foreign supported that the Foreign Language Effect (FLE) produced a small to medium effect size in both moral decision-making and risk aversion domains. Specifically, the effect size for moral decision making was Hedge's $g$ = 0.22, 95% $CI$ [.14, .30], while for risk aversion, it was Hedge's $g$ = .28, 95% $CI$ [.17, .39].
+
+All Hedge's $g$ values from these studies can be converted to Cohen's $d$. We conducted this conversion for every Hedge's $g$ included in the meta-analysis.
+
+
+```{r prior FLE 1}
+#Function to convert Hedge's G in Cohen's D
+converter <- function(g, N){
+  g / (1- (3/((4*N)-9)))
+}
+
+a <- c(0.3,0.26,0.22,0.95,0.52,0.64,0.63,0.33,0.4,0.5,0.54,0.3,0.34,0.24,0.38,0.06,0.15,0.34,-0.21,0.12,0.2,-0.04,-0.24,0.08,0.62,0.14,-0.2,-0.08,-0.11,0.12,0.29,0.06,0.45,0.28,0.13,0.45,0.07,-0.06,0.44,0.55,0.23,0.3,0.42,0.46,0.05,0.15,0.07)
+b <- c(112,80,107,18,328,397,105,152,72,144,211,173,399,202,190,201,223,197,214,242,195,211,209,161,161,800,140,204,138,163,129,60,60,154,198,175,305,295,146,54,300,245,92,123,40,155,97)
+
+data2 <- data.frame(a,b)
+cohen <- converter(data2$a,data2$b)
+mean(cohen)
+
+```
+
+The average Cohen's $d$ approximates 0.25, consistent with our Design Analysis. Cohen's 
+$d$ can then be converted to Odds Ratio ($OR$), which is an ideal effect size measure for analyzing categorical data on a 2x2 contingency table.
+
+```{r prior FLE 2}
+
+library(effectsize)
+
+odd <- d_to_oddsratio(cohen)
+
+
+```
+
+
+An $OR$ is a statistic that quantifies the strength of the association between two events, A and B. The $OR$ is defined as the ratio of the odds of A in the presence of B and the odds of A in the absence of B. We can convert $OR$ in Cohen's $h$, given the estimed proportion of 0.22 for the control group. Then, using these effect sizes, we can apply an inverse formula to compute the density of expected proportions of the FLE group based on all the studies we considered, and extract descriptive statistics.
+
+```{r prior FLE 3}
+
+h <- (odd*0.22) / (1+(odd*.22)-.22)
+
+p2 <- function(x){sin((x+(2*asin(0.22)))/2)}
+
+ggplot(mapping = aes(p2(h)))+
+  geom_density(fill="blue", color=NA, alpha=.5)+theme_bw()+
+  geom_boxplot(width=.2, fill="blue")+xlim(c(0,1))
+
+ pastecs::stat.desc(p2(h))
+```
+
+We can construct the prior beta distribution to have the same central tendency and dispersion statistics (M = 0.31, Var = 0.009) as the distribution derived from the meta-analysis studies.
+
+```{r prior FLE 4}
+
+estBetaParams(0.37,0.002)
+
+```
+
+### 5.3 Showing Beta Priors
+
+```{r priors}
+ggplot() +
+  stat_function(fun = ~dbeta(., 46.97,166.53), geom = "area",
+                aes(fill = "Control Beta(46.97, 166.53)"), alpha = 0.5) +
+  stat_function(fun = ~dbeta(., 42.75, 72.80), geom = "area",
+                aes(fill = "FLE Beta(42.75, 72.80)"), alpha = 0.5) +
+  scale_fill_manual(values = c("Control Beta(46.97, 166.53)" = "#FFDC00",
+                               "FLE Beta(42.75, 72.80)" = "#F012BE")) +
+  labs(x = expression(pi), y = "Densities", fill = NULL) +
+  theme(axis.text.y = element_blank(),
+        legend.position = "top")+
+  theme_bw()
+
+```
+
+<center> $Control \sim Beta(46.97, 166.53)$ </center>
+
+<center> $FLE \sim Beta(42.75, 72.80)$ </center>
+
+## 7. Inferential risks (Type S and Type M Errors)
+
+Here we proceeded with the inferential risk calculations. We simulated numerous studies assuming a plausible effect size of Cohen's $h$ equal to 0.25.
+
+Type S error is the probability of obtaining a statistically significant result in the opposite direction to the plausible one [@callegher2021prda]. Since we have formulated an unidirectional hypothesis, the Type S error should be equal to 0.
+
+Type M error is the factor by which a statistically significant effect is on average exaggerated. We will compute the Type M error accordingly.
+
+```{r risks}
+set.seed(20240331)
+base_proportion <- 0.22 
+FLE_proportion <- 0.33
+effectsize_h <- ES.h(0.33,0.22)
+
+samples_FLE <- rbinom(1e5,200,FLE_proportion)
+samples_control <- rbinom(1e5,200,base_proportion)
+samples <- data.frame(samples_control,samples_FLE)
+
+sam <- function(x){
+  n <- 1
+  pr_value <- 1:1e4
+  while (n<1e4){
+   pr_value[n] <- prop.test(c(x[n,1],x[n,2]),n=c(200,200), alternative = "less")$p.value
+    n <- n+1}
+  pr_value
+} 
+
+true <- sam(samples)<.05
+
+samples$true <- true
+
+samples$effect <- abs(ES.h(samples[1:1e4,1]/200, samples[1:1e4,2]/200))
+
+mean(as.vector(samples$effect)[samples$true==T])/effectsize_h
+
+```
+The Type M error is calculated to be 1.17. This indicates that, on average, the effect size of statistically significant results from the simulation exaggerated the inputted effect size by approximately 17%.
+
+## 8. Supplementary materials
+
+To visually assess how well the binomial distribution approximates the beta distribution, we can plot the cumulative distribution functions (CDFs) of both distributions on the same panel. This will allow us to compare their shapes.
+
+```{r supp, fig.height=3, fig.width=10}
+cumulative <- pbinom(0:200,200,0.22)
+
+cumulative2 <- pbeta(seq(0,1,by=0.005),46.97,166.53)
+
+a <- ggplot()+
+  geom_line(mapping = aes(x=0:200,y=cumulative))+
+  theme_bw()+labs(x="Binomial", y="Cumulative probability")
+
+b <- ggplot()+
+  geom_line(mapping = aes(x=seq(0,1,by=0.005),y=cumulative2))+
+  theme_bw()+ labs(x="Beta", y="Cumulative probability")
+
+library(gridExtra)
+grid.arrange(a,b, ncol=2)
+
+```
+
+## 6. References
+
+
