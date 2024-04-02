@@ -20,6 +20,8 @@ We posit that presenting the SSI task in a disfluent second language may enhance
 In this context, ‘no-FLE’ refers to the control group completing the task in their native language, where the Foreign Language Effect (FLE) is not expected, while ‘FLE’ refers to the experimental group performing the task in a disfluent second language, where the FLE is expected.
 
 We are seeking to reject the null hypothesis by employing a One-Tailed Two-Proportion Z test. Furthermore, to explore differences in proportions, we derived Bayesian priors to compute Bayesian posterior distributions for both conditions (see DX figure).
-<img width="859" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/f90dafd0-9394-45ac-baad-d3a96c303a39">
 
 A power analysis, based on an estimated Cohen’s ℎ effect size of 0.25, indicates a required sample size of 𝑛=200 for each group. Hence, we intend to recruit a minimum of 200 participants (see SX figure) for each group (i.e., disfluent second language vs. fluent mother tongue). The Type M error is calculated to be 1.17, suggesting that, on average, statistically significant results exaggerate the inputted effect size by approximately 17%. Given our unidirectional hypothesis, the Type S error is anticipated to be 0. This error pertains to the probability of obtaining a statistically significant result in the opposite direction to the expected one.
+
+<img width="859" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/f90dafd0-9394-45ac-baad-d3a96c303a39">
+
