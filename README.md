@@ -2,11 +2,15 @@
 
 Repository Structure:
 
-* **This document**: The Read Me document provides a concise overview of the key results derived from the design analyses for the three experiments.
-*  **Experiment 1 (ICP)** Folder: .PDF file, .html file, .Rmd file of the complete Design Analysis of Study 1 on the illusion of Causality
-*  **Experiment 2 (CFM)** Folder: .PDF file, .html file, .Rmd file of the complete Design Analysis of Study 2 on the Conjuction Fallacy
-*  **Experiment 3 (SSI)** Folder: .PDF file, .html file, .Rmd file of the complete Design Analysis of Study 3 on Sample Size Insensivity
-* **Dataset**: Dataset from our previous experiment used to perform power analysis in the first experiment.
+- **Read Me Document**: This document provides a concise overview of the key results derived from the design analyses for the three experiments.
+
+- **Experiment 1 (ICP) Folder**: Contains PDF, HTML, and Rmd files of the complete Design Analysis of Study 1 on the illusion of Causality.
+
+- **Experiment 2 (CFM) Folder**: Includes PDF, HTML, and Rmd files of the complete Design Analysis of Study 2 on the Conjunction Fallacy.
+
+- **Experiment 3 (SSI) Folder**: Consists of PDF, HTML, and Rmd files of the complete Design Analysis of Study 3 on Sample Size Insensitivity.
+
+- **Datasets**: Contains the blibliography (.bib) and datasets (.csv) from our previous experiment used to perform power analysis in the first experiment.
 
 # Design Analysis key results
 
