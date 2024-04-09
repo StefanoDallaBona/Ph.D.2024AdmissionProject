@@ -22,13 +22,14 @@ Participants will assume the role of medical personnel and will be exposed to tw
 We hypothesize that the second evaluation of the illusory medicine in condition S(I,E) will be lower than the first evaluation of the illusory medicine in the same condition S(I,E). We believe that comparing the illusory medicine to the effective one will diminish the perceived effectiveness of the illusory medicine, leading participants to update their previous belief about its effectiveness.
 
 * H0: First evaluation of I in S(I,E) = Second evaluation of I in S(I,E)
-* H1: First evaluation of I in S(I,E) < Second evaluation of I in S(I,E)
+* H1: First evaluation of I in S(I,E) > Second evaluation of I in S(I,E)
 
 Thus, a paired sample t-test is required to try to support that data are unlikely under the null-point hypothesis. This hypothesis serves as the foundation for our Design Analysis. It must be noticied that a null result would be very interesting, supporting the idea of the existence of an assessment inertia in the illusion frame. Additionally we are planning to compute Bayes Factor for assessing if data are more likely under the null model (BF01) or the alternative model (BF10).
 
 A power analysis, based on an estimated Cohen’s d effect size of 0.48, indicates a required sample size of n=28 for each group. However, we intend to recruit a minimum of 40 participants for each of the four groups, i.e., S(I,E), S(E,I), S(I,N), S(N,I)., to increase our power above 0.90. The Type M error is calculated to be 1.06, suggesting that, on average, statistically significant results exaggerate the inputted effect size by approximately 6%. Given our unidirectional hypothesis, the Type S error is anticipated to be 0. This error pertains to the probability of obtaining a statistically significant result in the opposite direction to the expected one.
 
-<img width="823" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/eda8e18b-0a28-44b4-b243-e198713e4cbe">
+<img width="820" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/62b24d15-97cf-470e-ba1d-1bd39a545c56">
+
 
 ## 3. Sample Size Insensivity (SSI)
 
