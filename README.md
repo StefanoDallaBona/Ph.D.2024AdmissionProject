@@ -27,6 +27,8 @@ Thus, a paired sample t-test is required to try to support that data are unlikel
 
 A power analysis, based on an estimated Cohen’s d effect size of 0.48, indicates a required sample size of n=200 for each group. However, we intend to recruit a minimum of 40 participants for each of the four groups, i.e., S(I,E), S(E,I), S(I,N), S(N,I)., to increase our power above 0.90. The Type M error is calculated to be 1.06, suggesting that, on average, statistically significant results exaggerate the inputted effect size by approximately 6%. Given our unidirectional hypothesis, the Type S error is anticipated to be 0. This error pertains to the probability of obtaining a statistically significant result in the opposite direction to the expected one.
 
+<img width="823" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/eda8e18b-0a28-44b4-b243-e198713e4cbe">
+
 ## 3. Sample Size Insensivity (SSI)
 
 We posit that presenting the SSI task in a disfluent second language may enhance individuals’ ability to provide correct responses to the task. Accordingly, we formulate two hypotheses:
