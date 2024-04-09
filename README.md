@@ -6,16 +6,16 @@ Repository Structure:
 
 - **Datasets**: Contains the blibliography (.bib) and datasets (.csv) from our previous experiment used to perform power analysis in the first experiment.
 
-- **Experiment 1 (ICP) Folder**: Contains PDF, HTML, and Rmd files of the complete Design Analysis of Study 1 on the illusion of Causality.
+- **Experiment 1 (ICP) Folder**: Contains PDF, HTML, and Rmd files of the complete Design Analysis of Study 1 on the Illusion of Causality.
 
 - **Experiment 2 (CFM) Folder**: Includes PDF, HTML, and Rmd files of the complete Design Analysis of Study 2 on the Conjunction Fallacy.
 
-- **Experiment 3 (SSI) Folder**: Consists of PDF, HTML, and Rmd files of the complete Design Analysis of Study 3 on Sample Size Insensitivity.
+- **Experiment 3 (SSI) Folder**: Consists of PDF, HTML, and Rmd files of the complete Design Analysis of Study 3 on the Sample Size Insensitivity.
 
 
 # Design Analysis key results
 
-## 1. Illusion of Causalty
+## 1. Illusion of Causality Propagation (ICP)
 
 Participants will assume the role of medical personnel and will be exposed to two sets of scenarios, where they will evaluate the effectiveness of a medicine to treat a disease at one hospital and then assess another medicine at a different hospital. Based on these assessments, participants can form opinions regarding the effectiveness of the two medicines and decide whether to adopt one, the other, both, or neither for a third hospital. In one of four experimental conditions, participants will compare two scenarios in the following sequence: one scenario will feature an illusory medicine (I), while the other will involve a genuinely effective medicine (E). This sequence of scenarios will be denoted as S(I,E).
 
