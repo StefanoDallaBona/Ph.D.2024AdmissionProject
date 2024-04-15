@@ -39,7 +39,7 @@ This study aims to uncover the cognitive processes behind the conjunction fallac
 
 ### 3.1 MPT Model
 
-<img width="641" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/4cf44528-3032-42df-8227-0bea0b895d58">
+<img width="633" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/e1fbbde2-c54c-4435-826f-2d3654787ada">
 
 <img width="580" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/3f24fc2a-e95e-4506-bdbd-635102b8f476">
 
