@@ -8,7 +8,7 @@ Repository Structure:
 
 - **Experiment 1 (ICP) Folder**: Contains PDF, HTML, and Rmd files of the complete Design Analysis of Study 1 on the Illusion of Causality.
 
-- **Experiment 2 (CFM) Folder**: Includes PDF, HTML, and Rmd files of the complete Design Analysis of Study 2 on the Conjunction Fallacy.
+- **Experiment 2 (CFM) Folder**: Includes PDF, HTML, and Rmd files of the complete Design Analysis of Study 2 on the Conjunction Fallacy. The PDF file does not include some figures, so the interested reader is invited to read the HTML file instead.
 
 - **Experiment 3 (SSI) Folder**: Consists of PDF, HTML, and Rmd files of the complete Design Analysis of Study 3 on the Sample Size Insensitivity.
 
