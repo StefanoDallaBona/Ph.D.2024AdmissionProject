@@ -30,21 +30,21 @@ A power analysis, based on an estimated Cohen’s d effect size of 0.48, indicat
 
 <img width="820" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/62b24d15-97cf-470e-ba1d-1bd39a545c56">
 
-## 3. Conjunction Fallacy (CF)
+## 2. Conjunction Fallacy (CF)
 
 This study aims to uncover the cognitive processes behind the conjunction fallacy (CF) by utilizing a Multinomial Processing Tree (MPT) model. We hypothesize that in a condition where the application of a mathematical rule is more salient, individuals are less likely to rely on heuristic processes and more inclined to apply a mathematical rule. Therefore, we expect the parameter $h$ for the heuristic process in the MPT model to be significantly reduced $(h-d)$ in the "Mathematical" condition compared to a classical "Heuristic" condition.
 
 * H0: The probability parameter $h$ in the heuristic condition equals the probability parameter $h$ in the second condition.
 * H1: The probability parameter $h$ in the heuristic condition is greater than the probability parameter $h$ in the second condition.
 
-### 3.1 MPT Model
+### 2.1 MPT Model
 
 <img width="633" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/e1fbbde2-c54c-4435-826f-2d3654787ada">
 
 <img width="580" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/3f24fc2a-e95e-4506-bdbd-635102b8f476">
 
 
-### 3.2 Power analysis
+### 2.2 Power analysis
 Given a hypothesized parameter difference of 0.6 between $h_1$ and $h_2$, we aim to recruit 100 participants for each condition to achieve a statistical power above 0.8.
 
 <img width="657" alt="image" src="https://github.com/StefanoDallaBona/Ph.D.2024AdmissionProject/assets/145267546/7cb32577-f79a-4c04-a08f-1965f624c79c">
